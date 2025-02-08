@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+
+
+</head>
+<body>
+    
+
+<!-- Navbar -->
+<nav class="navbar">
+    <div class="logo">💦 Water Footprint Quiz</div>
+    <ul class="nav-links">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+  <div class="container">
+    <div class="overlay">
+      <h2>📝 Water Footprint Questionnaire</h2>
+  
+      <!-- Display Question -->
+      <label>{{ questions[currentQuestion].text }}</label>
+      <select [(ngModel)]="answers[currentQuestion]" (ngModelChange)="onSelectAnswer(currentQuestion, $event)">
+        <option *ngFor="let option of questions[currentQuestion].options" [value]="option.value">
+          {{ option.text }}
+        </option>
+      </select>
+      
+  
+      <br>
+  
+      <!-- Navigation Buttons -->
+      <button class="spacing-button" *ngIf="currentQuestion > 0" (click)="prevQuestion()">Back</button>
+      <button class="spacing-button" *ngIf="currentQuestion < questions.length - 1" (click)="nextQuestion()">Next</button>
+      <button class="spacing-button" *ngIf="currentQuestion === questions.length - 1" (click)="finishQuiz()">Finish</button>
+
+    </div>
+  </div>
+  
+    <!-- Footer -->
+<footer class="footer">
+    <p>© 2025 Water Footprint Quiz - Made with ❤️</p>
+  </footer>
+  

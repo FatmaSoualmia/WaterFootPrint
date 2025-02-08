@@ -1,0 +1,7 @@
+.even{background-color: rgb(19, 223, 223);}
+.odd{background-color: rgb(205, 142, 14);}
+/* Optionally add some padding or borders for better visibility */
+td {
+    padding: 8px;
+    border: 1px solid #cb2121;
+  }

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+
+
+</head>
+<body>
+    
+
+<!-- Navbar -->
+<nav class="navbar">
+    <div class="logo">💦 Water Footprint Quiz</div>
+    <ul class="nav-links">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+  
+<div class="container" >
+    <div class="overlay">
+      <h1 class="title">🌊 Hello there! Ready to discover your water footprint? 💦</h1>
+      <form [formGroup]="quizForm" (ngSubmit)="onNext()">
+        <label for="country">Country of Residence:</label>
+        <select id="country" formControlName="country">
+          <option *ngFor="let country of countries" [value]="country">{{ country }}</option>
+        </select>
+  
+        <label for="gender">Gender:</label>
+        <select id="gender" formControlName="gender">
+          <option value="female">🌸Female</option>
+          <option value="male">🌊Male</option>
+        </select>
+  
+        <label for="diet">Dietary Habit:</label>
+        <select id="diet" formControlName="diet">
+            <option value="vegetarian">🥦 Veggie Power</option>
+            <option value="average">🍗 Casual Carnivore</option>
+            <option value="high">🥩 Meat Master</option>
+        </select>
+  
+        <button (click)="goToQuestionnaire()">Next ➡️         <span class="water-drop">💧</span>
+        </button>
+      </form>
+    </div>
+  </div>
+  <!-- Footer -->
+<footer class="footer">
+    <p>© 2025 Water Footprint Quiz - Made with ❤️</p>
+  </footer>
+</body>
+</html>

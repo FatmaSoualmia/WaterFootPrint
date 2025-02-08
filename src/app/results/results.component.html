@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+
+
+</head>
+<body>
+    
+
+<!-- Navbar -->
+<nav class="navbar">
+    <div class="logo">💦 Water Footprint Quiz</div>
+    <ul class="nav-links">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+<div class="container">
+    
+    <div class="overlay">
+    <h2>Your Water Footprint</h2>
+    <p>Your total water footprint is: {{ waterFootprint }} liters.</p>
+  
+    <!-- Display a note based on the water footprint value -->
+    <p *ngIf="waterFootprint < 5000">Great! You're using water efficiently.</p>
+    <p *ngIf="waterFootprint >= 5000 && waterFootprint < 10000">You're doing okay, but there are areas to improve.</p>
+    <p *ngIf="waterFootprint >= 10000">You need to work on reducing your water footprint.</p>
+  
+    <h3>Tips to reduce your water footprint:</h3>
+    <ul>
+      <li>Take shorter showers to save water.</li>
+      <li>Switch to water-efficient appliances.</li>
+      <li>Consider eating less meat, as it has a high water footprint.</li>
+      <li>Use public transportation more often to reduce your carbon and water footprint.</li>
+      <li>Recycle or donate old clothes instead of buying new ones.</li>
+      <li>Water your garden during cooler hours to minimize evaporation.</li>
+    </ul>
+  </div>
+  </div>
+  
+      <!-- Footer -->
+<footer class="footer">
+    <p>© 2025 Water Footprint Quiz - Made with ❤️</p>
+  </footer>
+  
